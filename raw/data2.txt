@@ -1,0 +1,1372 @@
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import { LoginForm } from "@/components/auth/LoginForm";
+import Link from "next/link";
+import Image from "next/image";
+import kiwiLogo from "../../../../public/kiwi.png";
+
+export default async function LoginPage() {
+  const session = await auth();
+
+  if (session) {
+    redirect("/dashboard");
+  }
+
+  return (
+    <div className="flex min-h-screen w-full">
+      {/* Left: Illustration */}
+      <div className="hidden lg:flex lg:w-1/2 relative items-center justify-center overflow-hidden bg-gradient-to-br from-primary/20 via-primary/5 to-background">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/15 via-transparent to-transparent" />
+        <div className="absolute top-1/4 -left-16 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-16 w-96 h-96 bg-primary-fixed-dim/10 rounded-full blur-3xl" />
+        <div className="relative z-10 flex flex-col items-center text-center px-12 max-w-lg">
+          <div className="w-20 h-20 flex items-center justify-center shadow-2xl mb-8 rounded-2xl bg-white overflow-hidden p-2">
+            <Image src={kiwiLogo} alt="Kiwi Logo" width={64} height={64} className="object-contain" />
+          </div>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Kiwi</h2>
+          <p className="text-lg text-on-surface-variant leading-relaxed">
+            Your intelligent workspace for documents, research, and knowledge management powered by AI.
+          </p>
+          <div className="mt-10 grid grid-cols-3 gap-6 w-full">
+            <div className="flex flex-col items-center gap-2">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <span className="material-icon text-primary">description</span>
+              </div>
+              <span className="text-xs text-on-surface-variant">Documents</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <span className="material-icon text-primary">chat</span>
+              </div>
+              <span className="text-xs text-on-surface-variant">Chat</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <span className="material-icon text-primary">quiz</span>
+              </div>
+              <span className="text-xs text-on-surface-variant">Quizzes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Right: Login Form */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-background">
+        <div className="w-full max-w-md">
+          <div className="lg:hidden flex items-center gap-3 mb-8 justify-center">
+            <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-white overflow-hidden p-1">
+              <Image src={kiwiLogo} alt="Kiwi Logo" width={32} height={32} className="object-contain" />
+            </div>
+            <span className="text-lg font-bold text-foreground">Kiwi</span>
+          </div>
+          <LoginForm />
+          <p className="text-sm text-muted-foreground text-center mt-6">
+            Don&apos;t have an account?{" "}
+            <Link
+              href="/register"
+              className="text-primary underline-offset-4 hover:underline font-medium"
+            >
+              Sign up
+            </Link>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import { RegisterForm } from "@/components/auth/RegisterForm";
+import Link from "next/link";
+
+export default async function RegisterPage() {
+  const session = await auth();
+
+  if (session) {
+    redirect("/dashboard");
+  }
+
+  return (
+    <div className="relative z-10 flex flex-col items-center gap-6">
+      <RegisterForm />
+      <p className="text-sm text-muted-foreground">
+        Already have an account?{" "}
+        <Link
+          href="/login"
+          className="text-primary underline-offset-4 hover:underline"
+        >
+          Sign in
+        </Link>
+      </p>
+    </div>
+  );
+}
+
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+
+export default async function AuthLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const session = await auth();
+
+  if (session) {
+    redirect("/dashboard");
+  }
+
+  return (
+    <>{children}</>
+  );
+}
+
+
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import { getStats, getAllUsers } from "@/services/admin";
+
+export default async function AdminPage() {
+  const session = await auth();
+
+  if (!session) {
+    redirect("/login");
+  }
+
+  if ((session.user as any).role !== "admin") {
+    redirect("/dashboard");
+  }
+
+  const [stats, users] = await Promise.all([
+    getStats(),
+    getAllUsers(),
+  ]);
+
+  const { StatsCards } = await import("@/components/admin/StatsCards");
+  const { UserListTable } = await import("@/components/admin/UserListTable");
+
+  return (
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight">Admin</h1>
+        <p className="text-muted-foreground mt-1">
+          System administration and monitoring
+        </p>
+      </div>
+
+      <StatsCards stats={stats} />
+
+      <div>
+        <h2 className="text-xl font-semibold mb-4">Users</h2>
+        <UserListTable users={users} />
+      </div>
+    </div>
+  );
+}
+
+
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import { SettingsPageClient } from "./SettingsPageClient";
+
+export default async function SettingsPage() {
+  const session = await auth();
+
+  if (!session?.user) {
+    redirect("/login");
+  }
+
+  return (
+    <div className="max-w-2xl mx-auto space-y-8">
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight">Settings</h1>
+        <p className="text-muted-foreground mt-1">
+          Manage your account settings
+        </p>
+      </div>
+
+      <SettingsPageClient
+        user={{
+          name: session.user.name,
+          email: session.user.email,
+          image: session.user.image,
+        }}
+      />
+    </div>
+  );
+}
+
+"use client"
+
+import { useState, useEffect } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Switch } from "@/components/ui/switch"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useTheme } from "next-themes"
+import { Sun, Moon, Trash2, User, Sparkles } from "lucide-react"
+
+interface SettingsPageClientProps {
+  user: {
+    name?: string | null
+    email?: string | null
+    image?: string | null
+  }
+}
+
+export function SettingsPageClient({ user }: SettingsPageClientProps) {
+  const { theme, setTheme } = useTheme()
+  const [name, setName] = useState(user.name || "")
+  const [saving, setSaving] = useState(false)
+  const [provider, setProvider] = useState("gemini")
+
+  useEffect(() => {
+    const saved = localStorage.getItem("llmProvider")
+    if (saved === "gemini" || saved === "groq") setProvider(saved)
+  }, [])
+
+  function handleProviderChange(value: string) {
+    setProvider(value)
+    localStorage.setItem("llmProvider", value)
+  }
+
+  const initials = user.name
+    ? user.name
+        .split(" ")
+        .map((n) => n[0])
+        .join("")
+        .toUpperCase()
+        .slice(0, 2)
+    : "U"
+
+  async function handleSaveProfile() {
+    setSaving(true)
+    try {
+      await fetch("/api/user/profile", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name }),
+      })
+    } catch {
+      // ignore
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  return (
+    <div className="space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <User className="h-5 w-5" />
+            Profile
+          </CardTitle>
+          <CardDescription>
+            Update your profile information
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex items-center gap-4">
+            <Avatar className="h-16 w-16">
+              <AvatarImage src={user.image || ""} alt={user.name || ""} />
+              <AvatarFallback className="text-lg">{initials}</AvatarFallback>
+            </Avatar>
+            <div>
+              <p className="font-medium">{user.name || "User"}</p>
+              <p className="text-sm text-muted-foreground">{user.email}</p>
+            </div>
+          </div>
+
+          <Separator />
+
+          <div className="space-y-2">
+            <Label htmlFor="name">Display Name</Label>
+            <Input
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your name"
+            />
+          </div>
+        </CardContent>
+        <CardFooter>
+          <Button onClick={handleSaveProfile} disabled={saving}>
+            {saving ? "Saving..." : "Save Changes"}
+          </Button>
+        </CardFooter>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            {theme === "dark" ? (
+              <Moon className="h-5 w-5" />
+            ) : (
+              <Sun className="h-5 w-5" />
+            )}
+            Appearance
+          </CardTitle>
+          <CardDescription>
+            Toggle between dark and light mode
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center justify-between">
+            <div>
+              <Label htmlFor="theme-mode">Dark Mode</Label>
+              <p className="text-sm text-muted-foreground">
+                Switch between dark and light theme
+              </p>
+            </div>
+            <Switch
+              id="theme-mode"
+              checked={theme === "dark"}
+              onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
+            />
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Sparkles className="h-5 w-5" />
+            AI Model
+          </CardTitle>
+          <CardDescription>
+            Choose which LLM provider to use for chat, flashcards, quizzes, and reports
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-2">
+            <Label htmlFor="llm-provider">Provider</Label>
+            <Select value={provider} onValueChange={handleProviderChange}>
+              <SelectTrigger id="llm-provider" className="w-full">
+                <SelectValue placeholder="Select provider" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="gemini">Gemini 2.5 Flash</SelectItem>
+                <SelectItem value="groq">Groq (Llama 3.3 70B)</SelectItem>
+              </SelectContent>
+            </Select>
+            <p className="text-sm text-muted-foreground">
+              {provider === "gemini"
+                ? "Uses GEMINI_API_KEY from your environment. Free tier available."
+                : "Uses GROQ_API_KEY from your environment. Fast inference with free tier."}
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="border-destructive">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-destructive">
+            <Trash2 className="h-5 w-5" />
+            Danger Zone
+          </CardTitle>
+          <CardDescription>
+            Irreversible account actions
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground mb-4">
+            Once you delete your account, there is no going back. Please be
+            certain.
+          </p>
+          <Button variant="destructive" disabled>
+            Delete Account
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}
+"use client"
+
+import { useState, useEffect, useCallback } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
+import { ChatHistory } from "@/components/chat/ChatHistory"
+import { ChatWindow } from "@/components/chat/ChatWindow"
+
+interface ChatSession {
+  id: string
+  title: string | null
+  createdAt: string
+}
+
+interface Message {
+  id: string
+  role: string
+  content: string
+  citations?: any[]
+  createdAt: string
+}
+
+interface ChatPageClientProps {
+  workspaceId: string
+  userId: string
+  activeSessionId?: string
+}
+
+export function ChatPageClient({
+  workspaceId,
+  userId,
+  activeSessionId,
+}: ChatPageClientProps) {
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  const [sessions, setSessions] = useState<ChatSession[]>([])
+  const [loading, setLoading] = useState(true)
+  const [messages, setMessages] = useState<Message[]>([])
+  const [showSources, setShowSources] = useState(true)
+
+  useEffect(() => {
+    async function fetchSessions() {
+      try {
+        const res = await fetch(`/api/workspace/${workspaceId}/chat/sessions`)
+        if (res.ok) {
+          const data = await res.json()
+          setSessions(data)
+        }
+      } catch {
+        // ignore
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchSessions()
+  }, [workspaceId])
+
+  useEffect(() => {
+    if (!activeSessionId) {
+      setMessages([])
+      return
+    }
+    async function fetchMessages() {
+      try {
+        const res = await fetch(
+          `/api/workspace/${workspaceId}/chat/sessions/${activeSessionId}`
+        )
+        if (res.ok) {
+          const data = await res.json()
+          setMessages(data)
+        }
+      } catch {
+        // ignore
+      }
+    }
+    fetchMessages()
+  }, [activeSessionId, workspaceId])
+
+  const handleNewSession = useCallback(async () => {
+    try {
+      const res = await fetch(`/api/workspace/${workspaceId}/chat/sessions`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId }),
+      })
+      if (res.ok) {
+        const session = await res.json()
+        setSessions((prev) => [session, ...prev])
+        const params = new URLSearchParams(searchParams.toString())
+        params.set("session", session.id)
+        router.push(`/workspace/${workspaceId}/chat?${params.toString()}`)
+      }
+    } catch {
+      // ignore
+    }
+  }, [workspaceId, userId, router, searchParams])
+
+  const handleDeleteSession = useCallback(async (sessionId: string) => {
+    try {
+      await fetch(
+        `/api/workspace/${workspaceId}/chat/sessions/${sessionId}`,
+        { method: "DELETE" }
+      )
+      setSessions((prev) => prev.filter((s) => s.id !== sessionId))
+    } catch {
+      // ignore
+    }
+  }, [workspaceId])
+
+  const handleTitleUpdate = useCallback((sessionId: string, title: string) => {
+    setSessions((prev) =>
+      prev.map((s) => (s.id === sessionId ? { ...s, title } : s))
+    )
+  }, [])
+
+  // Collect all citations from current messages
+  const allCitations = messages.flatMap((m) => m.citations || []).filter(Boolean)
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <p className="text-on-surface-variant">Loading...</p>
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex h-full">
+      {/* Chat History Sidebar */}
+      <div className="w-64 shrink-0 border-r border-outline-muted bg-surface-container-lowest flex flex-col">
+        <ChatHistory
+          sessions={sessions}
+          activeSessionId={activeSessionId}
+          onSelectSession={(id) => {
+            const params = new URLSearchParams(searchParams.toString())
+            params.set("session", id)
+            router.push(`/workspace/${workspaceId}/chat?${params.toString()}`)
+          }}
+          onNewSession={handleNewSession}
+          onDeleteSession={handleDeleteSession}
+        />
+      </div>
+
+      {/* Main Chat */}
+      <div className="flex-1 flex flex-col min-w-0 h-full bg-background relative">
+        {activeSessionId ? (
+          <ChatWindow
+            sessionId={activeSessionId}
+            workspaceId={workspaceId}
+            initialMessages={messages}
+            citations={allCitations}
+            onToggleSources={() => setShowSources(!showSources)}
+            onTitleUpdate={(title) => handleTitleUpdate(activeSessionId, title)}
+          />
+        ) : (
+          <div className="flex flex-col items-center justify-center h-full text-center p-8">
+            <span className="material-icon text-[64px] text-on-surface-variant/30 mb-4">chat</span>
+            <h3 className="text-lg font-medium text-foreground">No Chat Selected</h3>
+            <p className="text-sm text-on-surface-variant mt-1 mb-4">
+              Select a chat session from the sidebar or start a new one
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Sources Sidebar */}
+      {activeSessionId && showSources && (
+        <aside className="w-80 h-full border-l border-outline-muted bg-surface-container-lowest flex flex-col p-gutter overflow-y-auto custom-scrollbar">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="font-label-md text-label-md font-bold text-on-surface uppercase tracking-wider">Sources</h2>
+            <div className="flex items-center gap-2">
+              <span className="px-2 py-0.5 rounded bg-primary/10 text-primary text-[10px] font-bold">
+                {allCitations.length} CITED
+              </span>
+              <button
+                onClick={() => setShowSources(false)}
+                className="flex h-6 w-6 items-center justify-center rounded text-on-surface-variant hover:text-foreground hover:bg-surface-container transition-colors"
+              >
+                <span className="material-icon text-[16px]">close</span>
+              </button>
+            </div>
+          </div>
+          {allCitations.length === 0 ? (
+            <p className="text-xs text-on-surface-variant/60 italic">
+              Sources will appear here when the AI references documents
+            </p>
+          ) : (
+            <div className="space-y-6">
+              {allCitations.map((citation: any, i: number) => (
+                <div key={i} className="glass-card rounded-xl p-4 transition-all cursor-pointer group">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-5 h-5 flex items-center justify-center bg-primary text-on-primary rounded text-[10px] font-bold">{i + 1}</span>
+                    <span className="text-xs font-medium text-on-surface-variant truncate">
+                      {citation.sourceTitle || "Document"}
+                    </span>
+                  </div>
+                  <p className="text-[13px] leading-relaxed text-on-surface-variant line-clamp-4 italic group-hover:text-on-surface transition-colors">
+                    "{citation.textSnippet}"
+                  </p>
+                  <div className="mt-3 flex items-center gap-1 text-primary text-[11px] font-semibold uppercase tracking-tight opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span>Open Document</span>
+                    <span className="material-symbols-outlined text-[14px]">arrow_outward</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </aside>
+      )}
+    </div>
+  )
+}
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
+import { getWorkspace } from "@/services/workspaces";
+import { ChatPageClient } from "./ChatPageClient";
+import { TabNavigation } from "@/components/shared/TabNavigation";
+
+interface PageProps {
+  params: Promise<{
+    workspaceId: string;
+  }>;
+  searchParams: Promise<{
+    session?: string;
+  }>;
+}
+
+export default async function ChatPage({ params, searchParams }: PageProps) {
+  const session = await auth();
+
+  if (!session?.user?.id) {
+    redirect("/login");
+  }
+
+  const [{ workspaceId }, { session: activeSessionId }] = await Promise.all([
+    params,
+    searchParams,
+  ]);
+
+  const workspace = await getWorkspace(workspaceId);
+
+  if (!workspace) {
+    notFound();
+  }
+
+  return (
+    <div className="h-[calc(100vh-112px)] lg:h-[calc(100vh-128px)] flex flex-col glass-card-strong rounded-xl overflow-hidden border border-border/50">
+
+
+      <div className="flex-1 min-h-0 bg-background/20 relative">
+        <ChatPageClient
+          workspaceId={workspaceId}
+          userId={session.user.id}
+          activeSessionId={activeSessionId}
+        />
+      </div>
+    </div>
+  );
+}
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
+import { getWorkspace } from "@/services/workspaces";
+import { getDocumentsForWorkspace } from "@/services/documents";
+import { DocumentList } from "@/components/documents/DocumentList";
+import { TabNavigation } from "@/components/shared/TabNavigation";
+
+interface PageProps {
+  params: Promise<{
+    workspaceId: string;
+  }>;
+}
+
+export default async function DocumentsPage({ params }: PageProps) {
+  const session = await auth();
+
+  if (!session?.user?.id) {
+    redirect("/login");
+  }
+
+  const { workspaceId } = await params;
+
+  const workspace = await getWorkspace(workspaceId);
+
+  if (!workspace) {
+    notFound();
+  }
+
+  const docs = await getDocumentsForWorkspace(workspaceId);
+  const documents = docs.map((d) => ({
+    ...d,
+    status: d.status ?? "processing",
+    createdAt: d.createdAt.toISOString(),
+  }));
+
+  return (
+    <div className="space-y-6">
+      {/* Workspace Header */}
+      <div className="glass-card-strong px-6 py-4">
+        <div className="flex items-center justify-between mb-1">
+          <h1 className="text-lg font-semibold text-foreground">{workspace.name}</h1>
+        </div>
+        {workspace.description && (
+          <p className="text-sm text-on-surface-variant mb-4">{workspace.description}</p>
+        )}
+        <TabNavigation workspaceId={workspaceId} />
+      </div>
+
+      <DocumentList documents={documents} workspaceId={workspaceId} />
+    </div>
+  );
+}
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
+import { getWorkspace } from "@/services/workspaces";
+import { FlashcardDeck } from "@/components/flashcards/FlashcardDeck";
+import { GenerateFlashcardDialog } from "@/components/flashcards/GenerateFlashcardDialog";
+import { TabNavigation } from "@/components/shared/TabNavigation";
+import { db } from "@/lib/db";
+import { flashcards } from "@/lib/db/schema";
+import { eq } from "drizzle-orm";
+
+interface PageProps {
+  params: Promise<{
+    workspaceId: string;
+  }>;
+}
+
+export default async function FlashcardsPage({ params }: PageProps) {
+  const session = await auth();
+
+  if (!session) {
+    redirect("/login");
+  }
+
+  const { workspaceId } = await params;
+
+  const workspace = await getWorkspace(workspaceId);
+
+  if (!workspace) {
+    notFound();
+  }
+
+  const cards = await db
+    .select()
+    .from(flashcards)
+    .where(eq(flashcards.workspaceId, workspaceId))
+    .orderBy(flashcards.createdAt);
+
+  return (
+    <div className="space-y-6 h-full flex flex-col">
+
+
+      <div className="flex items-center justify-between shrink-0">
+        <div>
+          <h2 className="text-lg font-medium text-foreground">Flashcards</h2>
+          <p className="text-sm text-on-surface-variant">Study and review key concepts</p>
+        </div>
+        <GenerateFlashcardDialog workspaceId={workspaceId} />
+      </div>
+
+      <div className="flex-1 min-h-0">
+        <FlashcardDeck flashcards={cards} workspaceId={workspaceId} />
+      </div>
+    </div>
+  );
+}
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
+import { getWorkspace } from "@/services/workspaces";
+import { QuizList } from "@/components/quizzes/QuizList";
+import { GenerateQuizDialog } from "@/components/quizzes/GenerateQuizDialog";
+import { TabNavigation } from "@/components/shared/TabNavigation";
+import { db } from "@/lib/db";
+import { quizzes, quizQuestions } from "@/lib/db/schema";
+import { eq } from "drizzle-orm";
+
+interface PageProps {
+  params: Promise<{
+    workspaceId: string;
+  }>;
+}
+
+export default async function QuizzesPage({ params }: PageProps) {
+  const session = await auth();
+
+  if (!session?.user?.id) {
+    redirect("/login");
+  }
+
+  const { workspaceId } = await params;
+
+  const workspace = await getWorkspace(workspaceId);
+
+  if (!workspace) {
+    notFound();
+  }
+
+  const quizRecords = await db
+    .select()
+    .from(quizzes)
+    .where(eq(quizzes.workspaceId, workspaceId))
+    .orderBy(quizzes.createdAt);
+
+  const quizData = await Promise.all(
+    quizRecords.map(async (quiz) => {
+      const questions = await db
+        .select()
+        .from(quizQuestions)
+        .where(eq(quizQuestions.quizId, quiz.id))
+        .orderBy(quizQuestions.orderIndex);
+
+      return {
+        id: quiz.id,
+        title: quiz.title,
+        createdAt: quiz.createdAt.toISOString(),
+        questions: questions.map((q) => ({
+          id: q.id,
+          question: q.question,
+          options: q.options as string[] | null,
+          correctAnswer: q.correctAnswer,
+          explanation: q.explanation,
+          questionType: q.questionType,
+        })),
+      };
+    })
+  );
+
+  return (
+    <div className="space-y-6 h-full flex flex-col">
+
+
+      <div className="flex items-center justify-between shrink-0">
+        <div>
+          <h2 className="text-lg font-medium text-foreground">Quizzes</h2>
+          <p className="text-sm text-on-surface-variant">Test your knowledge with AI-generated quizzes</p>
+        </div>
+        <GenerateQuizDialog workspaceId={workspaceId} />
+      </div>
+
+      <div className="flex-1 min-h-0">
+        <QuizList quizzes={quizData} workspaceId={workspaceId} />
+      </div>
+    </div>
+  );
+}
+import { NextRequest, NextResponse } from "next/server";
+import { requireUser } from "@/lib/auth/getCurrentUser";
+import { License, Membership, User, Notification } from "@/lib/db/models";
+import connectDB from "@/lib/db/connection";
+import { getStripe, STRIPE_PRICES } from "@/lib/stripe";
+import { emailService } from "@/lib/emailService";
+import { isPaidPlan } from "@/config/plans";
+import crypto from "crypto";
+import { hasLinkedInAccount } from "@/lib/team/linkedinAccount";
+
+// POST /api/team/invites - Invite a manager
+export async function POST(req: NextRequest) {
+  try {
+    const user = await requireUser();
+    await connectDB();
+
+    // Free plan users cannot use Team delegation
+    if (!isPaidPlan(user.plan)) {
+      return NextResponse.json(
+        { error: "Team delegation requires an active paid subscription (Pro or Grow). Please upgrade your plan first." },
+        { status: 403 }
+      );
+    }
+
+    // Managers cannot invite members
+    const actingOwnerId = req.headers.get("x-acting-owner")?.trim();
+    if (actingOwnerId && actingOwnerId !== user._id.toString()) {
+      return NextResponse.json({ error: "forbidden" }, { status: 403 });
+    }
+
+    const body = await req.json();
+    const rawEmail = (body.email || "").trim().toLowerCase();
+    const access = body.access || {};
+    const off = body.off || {};
+
+    if (!rawEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(rawEmail)) {
+      return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
+    }
+
+    // Owner cannot invite themselves
+    if (rawEmail === (user.email || "").toLowerCase()) {
+      return NextResponse.json(
+        { error: "You cannot invite yourself as a manager" },
+        { status: 400 }
+      );
+    }
+
+    // Managers sign in with LinkedIn, so the invite must go to the email on a LinkedIn account.
+    // If that email already has an account here, it has to be LinkedIn-linked.
+    const inviteeAccount = await User.findOne({ email: rawEmail })
+      .select("linkedinId linkedinConnected authProvider")
+      .lean();
+    if (inviteeAccount && !hasLinkedInAccount(inviteeAccount)) {
+      return NextResponse.json(
+        { error: "This email isn't linked to a LinkedIn account. Please use the email they sign in to LinkedIn with." },
+        { status: 400 }
+      );
+    }
+
+    // Check if membership already exists for this email under this owner
+    const existing = await Membership.findOne({
+      ownerId: user._id,
+      email: rawEmail,
+    });
+
+    if (existing) {
+      if (existing.status === "active") {
+        return NextResponse.json(
+          { error: "This user is already an active manager in your account" },
+          { status: 400 }
+        );
+      }
+      if (existing.status === "pending") {
+        // Reuse pending invite, update access and reset 7-day token without buying new license
+        existing.access = access;
+        existing.off = off;
+        existing.inviteToken = crypto.randomBytes(24).toString("hex");
+        existing.expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+        existing.invitedAt = new Date();
+        await existing.save();
+
+        const appUrl = (process.env.NEXTAUTH_URL || process.env.AUTH_URL || process.env.NEXT_PUBLIC_APP_URL || req.nextUrl.origin).replace(/\/$/, "");
+        const inviteUrl = `${appUrl}/invite/${existing.inviteToken}`;
+
+        // Create in-app notification if invited user has an account
+        const invitedUser = await User.findOne({ email: rawEmail });
+        if (invitedUser) {
+          await Notification.create({
+            userId: invitedUser._id,
+            type: "TEAM_INVITE",
+            title: `${user.name || "A team owner"} invited you to manage their profile`,
+            body: `You've been invited as a manager with delegated access. Click here to review and accept the invitation.`,
+            link: `/invite/${existing.inviteToken}`,
+            read: false,
+          });
+        }
+
+        // SendPulse email notification
+        const recipientName = invitedUser?.name || rawEmail.split("@")[0];
+        const ownerName = user.name || "A team owner";
+        emailService.sendManagerInviteEmail(
+          rawEmail,
+          recipientName,
+          ownerName,
+          inviteUrl
+        ).catch((err) => {
+          console.error("[TEAM_INVITE_EMAIL_ERROR]", err);
+        });
+
+        return NextResponse.json({
+          membership: existing,
+          inviteUrl,
+          message: "Pending invite updated and resent",
+        });
+      }
+    }
+
+    // Licensing: check seats in use vs seats owned
+    let license = await License.findOne({ ownerId: user._id });
+    if (!license) {
+      license = await License.create({
+        ownerId: user._id,
+        seats: 0,
+        unitPriceCents: 1000,
+        renewsAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+      });
+    }
+
+    const activeMembersCount = await Membership.countDocuments({
+      ownerId: user._id,
+      status: { $in: ["pending", "active"] },
+    });
+
+    // If no open license is available, purchase one seat ($10/mo)
+    let purchasedNewSeat = false;
+    if (activeMembersCount >= license.seats) {
+      if (!user.stripeSubId && process.env.NODE_ENV === "production") {
+        return NextResponse.json(
+          { error: "An active paid subscription is required to add manager licenses. Please upgrade your plan first." },
+          { status: 400 }
+        );
+      }
+
+      if (user.stripeSubId && STRIPE_PRICES.MANAGER_ACCESS) {
+        const stripe = getStripe();
+        const targetQuantity = license.seats + 1;
+
+        try {
+          if (license.stripeSubscriptionItemId) {
+            await stripe.subscriptionItems.update(license.stripeSubscriptionItemId, {
+              quantity: targetQuantity,
+              proration_behavior: "create_prorations",
+            });
+          } else {
+            // Check if subscription item already exists on this subscription in Stripe
+            const sub = await stripe.subscriptions.retrieve(user.stripeSubId);
+            const existingItem = sub.items.data.find(
+              (item) => item.price.id === STRIPE_PRICES.MANAGER_ACCESS
+            );
+
+            if (existingItem) {
+              await stripe.subscriptionItems.update(existingItem.id, {
+                quantity: targetQuantity,
+                proration_behavior: "create_prorations",
+              });
+              license.stripeSubscriptionItemId = existingItem.id;
+            } else {
+              const newItem = await stripe.subscriptionItems.create({
+                subscription: user.stripeSubId,
+                price: STRIPE_PRICES.MANAGER_ACCESS,
+                quantity: targetQuantity,
+                proration_behavior: "create_prorations",
+              });
+              license.stripeSubscriptionItemId = newItem.id;
+            }
+          }
+          license.stripePriceId = STRIPE_PRICES.MANAGER_ACCESS;
+        } catch (stripeError: any) {
+          console.error("[TEAM_INVITE_STRIPE_ERROR]", stripeError);
+          return NextResponse.json(
+            { error: stripeError.message || "Failed to charge manager license to your card on file." },
+            { status: 400 }
+          );
+        }
+      }
+
+      license.seats += 1;
+      await license.save();
+      purchasedNewSeat = true;
+    }
+
+    const inviteToken = crypto.randomBytes(24).toString("hex");
+    let membership;
+    if (existing) {
+      existing.status = "pending";
+      existing.inviteToken = inviteToken;
+      existing.invitedAt = new Date();
+      existing.expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+      existing.access = access;
+      existing.off = off;
+      existing.creditsUsed = 0;
+      await existing.save();
+      membership = existing;
+    } else {
+      membership = await Membership.create({
+        ownerId: user._id,
+        email: rawEmail,
+        status: "pending",
+        inviteToken,
+        invitedAt: new Date(),
+        expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+        access,
+        off,
+        creditsUsed: 0,
+      });
+    }
+
+    const appUrl = (process.env.NEXTAUTH_URL || process.env.AUTH_URL || process.env.NEXT_PUBLIC_APP_URL || req.nextUrl.origin).replace(/\/$/, "");
+    const inviteUrl = `${appUrl}/invite/${inviteToken}`;
+
+    // Create in-app notification if invited user has an account
+    const invitedUser = await User.findOne({ email: rawEmail });
+    if (invitedUser) {
+      await Notification.create({
+        userId: invitedUser._id,
+        type: "TEAM_INVITE",
+        title: `${user.name || "A team owner"} invited you to manage their profile`,
+        body: `You've been invited as a manager with delegated access. Click here to review and accept the invitation.`,
+        link: `/invite/${inviteToken}`,
+        read: false,
+      });
+    }
+
+    // SendPulse email notification
+    const recipientName = invitedUser?.name || rawEmail.split("@")[0];
+    const ownerName = user.name || "A team owner";
+    emailService.sendManagerInviteEmail(
+      rawEmail,
+      recipientName,
+      ownerName,
+      inviteUrl
+    ).catch((err) => {
+      console.error("[TEAM_INVITE_EMAIL_ERROR]", err);
+    });
+
+    return NextResponse.json({
+      membership,
+      inviteUrl,
+      purchasedNewSeat,
+      license,
+    });
+  } catch (error: any) {
+    console.error("[TEAM_INVITE_ERROR]", error);
+    return NextResponse.json(
+      { error: error.message || "Failed to send manager invite" },
+      { status: error.status || 500 }
+    );
+  }
+}
+import { NextRequest, NextResponse } from "next/server";
+import { getActiveStrategy, strategyDefaults } from "@/lib/strategy/context";
+import { requireUser } from "@/lib/auth/getCurrentUser";
+import { User, Upload, ChatSession, Message } from "@/lib/db/models";
+import { generateText } from "@/lib/ai/router";
+import { hasEnoughCredits, deductCredits } from "@/lib/credits";
+import { CreditAction } from "@/lib/db/enums";
+import { getLinkedInContextString } from "@/lib/harness/context-engine";
+import { screenContent } from "@/lib/harness/content-safety";
+
+const SYSTEM_PROMPT = `
+You are Beeyouniq, an expert LinkedIn ghostwriter with deep knowledge of what drives engagement.
+
+## YOUR BEHAVIOUR
+- Analyze the user's request and write ONE perfect LinkedIn post for them. 
+- Pick the best format for the specific topic. Do NOT ask the user to choose.
+- If they ask to refine/edit/change the current post, just rewrite it with the requested change.
+- If they are just chatting (no post needed), respond in plain text.
+
+## LINKEDIN FORMAT OPTIONS (you decide which fits best):
+Hook Story | Hot Take | Data Drop | Contrarian | Listicle | Micro-Story | How-To | Behind-the-Scenes | Celebration | Poll-Style
+
+## RULES FOR GREAT POSTS (CRITICAL FOR HIGH ENGAGEMENT SCORE):
+- HOOK: Start with a scroll-stopping first line. Use patterns like "Hot take:", "Unpopular opinion:", "The truth about...", "X ways to...", "I built/lost/quit...", or "Nobody talks about...".
+- SPECIFICITY: Include specific numbers, timeframes (e.g. "in 30 days"), or recognizable entities in the hook.
+- EMOTION: Use emotional triggers in the first 200 characters (e.g., "before it's too late", "transformed", "secret", "nobody tells you").
+- CLARITY: Use white space generously (short paragraphs, max 2-3 sentences each). Keep Flesch reading ease high.
+- LENGTH: 150-300 words is the sweet spot unless user asks for longer/shorter.
+- CTA: End with a CLEAR Call-to-Action question that drives comments (e.g., "What's your take?", "Do you agree?", "What would you add?").
+- FORMATTING: LinkedIn is PLAIN TEXT only. NEVER use **bold**, *italic*, or _italic_ in the post body. Use ▸ or → as visual bullets.
+
+## OUTPUT FORMAT (strict JSON, no markdown code fences):
+{
+  "type": "chat" | "post",
+  "reply": "Only for type=chat. A natural conversational response.",
+  "post": {
+    "format": "The format name you chose (e.g., POLL)",
+    "body": "The full post text. 🛑 CRITICAL FOR POLLS 🛑: You MUST NOT write the poll options inline. The body must be extremely short (1-2 sentences max) as a brief intro, followed by hashtags.",
+    "hashtags": ["#tag1", "#tag2", "#tag3"],
+    "pollData": { "question": "Question?", "options": ["Option 1", "Option 2"] } // Include only if format is POLL
+  }
+}
+
+If type is "post", always include the post object. If type is "chat", only include reply.
+`;
+
+export async function POST(req: NextRequest) {
+  try {
+    const user = await requireUser();
+    
+    if (!hasEnoughCredits(user, CreditAction.POST_GEN)) {
+      return NextResponse.json(
+        { error: "insufficient_credits", message: "Not enough credits to generate content." },
+        { status: 402 }
+      );
+    }
+    const { prompt, history, fileId, currentPostBody, postId } = await req.json();
+
+    const blocked = await screenContent([prompt, currentPostBody], { userId: user._id.toString(), route: "generate" });
+    if (blocked) return blocked;
+
+    await deductCredits(user._id.toString(), CreditAction.POST_GEN);
+
+    let dbUser = null;
+    if (user._id.toString()) {
+      dbUser = await User.findById(user._id.toString()).lean();
+    }
+
+    let userContextBlock = "";
+    if (dbUser) {
+      const defaults = strategyDefaults(await getActiveStrategy(user._id.toString()).catch(() => null));
+      const background = dbUser.roleBio || (dbUser.expertise?.length ? dbUser.expertise.join(', ') : null);
+      const expertise  = dbUser.expertise?.length ? dbUser.expertise.join(', ') : null;
+      const audience   = defaults.audience || dbUser.primaryAudience || (dbUser.targetAudience?.length ? dbUser.targetAudience.join(', ') : null);
+      const goals      = defaults.goals || (dbUser.linkedinGoals?.length ? dbUser.linkedinGoals.join(', ') : (dbUser.goals?.length ? dbUser.goals.join(', ') : null));
+      const pillars    = defaults.pillars || (dbUser.contentPillars?.length ? dbUser.contentPillars.join(', ') : (dbUser.tonePreferences?.length ? dbUser.tonePreferences.join(', ') : null));
+      const postTypes  = dbUser.preferredPostTypes?.length ? dbUser.preferredPostTypes.join(', ') : null;
+      const tones      = dbUser.toneTags?.length ? dbUser.toneTags.join(', ') : (dbUser.voiceTemplates?.length ? dbUser.voiceTemplates.join(', ') : null);
+      const avoid      = dbUser.avoidTags?.length ? dbUser.avoidTags.join(', ') : null;
+      const customTone = dbUser.customToneDescription || null;
+      const sample     = dbUser.writingSample || null;
+
+      const prefs = [
+        background  ? `User background: ${background}` : null,
+        expertise   ? `Areas of expertise: ${expertise}` : null,
+        audience    ? `Primary audience: ${audience}` : null,
+        goals       ? `LinkedIn goals: ${goals}` : null,
+        pillars     ? `Content pillars (preferred topics): ${pillars}` : null,
+        postTypes   ? `Preferred post formats: ${postTypes}` : null,
+        tones       ? `Tone of voice (MUST match): ${tones}` : null,
+        customTone  ? `Custom tone description: ${customTone}` : null,
+        avoid       ? `NEVER sound like (hard constraint): ${avoid}` : null,
+      ].filter(Boolean).join('\n');
+
+      if (prefs) {
+        userContextBlock = `\n\n━━━ USER PROFILE (apply these to every post) ━━━\n${prefs}\n`;
+      }
+
+      if (sample) {
+        userContextBlock += `\n━━━ WRITING STYLE REFERENCE ━━━\nThe user has provided a sample of their own writing below. Match their cadence, vocabulary, and sentence rhythm. Do NOT copy content — only match the style:\n"""\n${sample.slice(0, 800)}\n"""\nIMPORTANT: The writing sample above overrides generic tone tags. Prioritise matching the sample's voice.\n`;
+      }
+
+      try {
+        const linkedInContext = await getLinkedInContextString(user._id.toString());
+        if (linkedInContext) {
+          userContextBlock += `\n\n${linkedInContext}\n\nIMPORTANT: Use the LinkedIn profile data above to write the post in the user's authentic voice, referencing their real skills, experiences, and audience.\n`;
+        }
+      } catch (e) {
+        console.warn('Failed to fetch LinkedIn context for generate route', e);
+      }
+    }
+
+
+    let imagePart = null;
+    if (fileId) {
+      const upload = await Upload.findById(fileId).lean();
+      if (upload?.originalUrl && ((upload.type as string) === "PHOTOS" || (upload.type as string) === "PHOTO" || (upload.type as string) === "image")) {
+        try {
+          let buffer;
+          if (upload.originalUrl.startsWith("/uploads/")) {
+            const fs = require("fs/promises");
+            const path = require("path");
+            const filePath = path.join(process.cwd(), "public", upload.originalUrl);
+            buffer = await fs.readFile(filePath);
+          } else {
+            const imageRes = await fetch(upload.originalUrl);
+            buffer = await imageRes.arrayBuffer();
+          }
+
+          imagePart = {
+            inline_data: {
+              mime_type: "image/jpeg",
+              data: Buffer.from(buffer).toString("base64")
+            }
+          };
+        } catch (e) {
+          console.error("Failed to fetch image for AI:", e);
+        }
+      }
+    }
+
+    // 1. Try AI Router (handles OpenAI, Gemini, etc.)
+    const formattedHistory = history?.map((m: any) => `${m.role.toUpperCase()}: ${m.content}`).join("\n") || "";
+    const currentDraftContext = currentPostBody ? `\n\nCURRENT DRAFT (Refine this): ${currentPostBody}` : "";
+    const fullPrompt = `${SYSTEM_PROMPT}${userContextBlock}${currentDraftContext}\n\nConversation History:\n${formattedHistory}\n\nUser Input: ${prompt || "Write an engaging LinkedIn post."}`;
+
+    let text = "";
+    let usedMock = false;
+
+    try {
+      text = await generateText({
+        prompt: fullPrompt,
+        isJson: true,
+        userId: user?._id.toString(),
+      });
+      console.log(`✅ Got response from AI Router, length: ${text.length}`);
+    } catch (e) {
+      console.error("AI Router Exception:", e);
+    }
+
+    if (text && text.length >= 10) {
+      let result: any = null;
+      if (!usedMock) {
+        // Strip markdown code fences if Gemini wrapped the JSON
+        const cleanText = text.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+        const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
+        if (jsonMatch) {
+          try {
+            // Sanitize bare control chars inside JSON string values using a state machine
+            const sanitizeJson = (s: string) => {
+              let out = "";
+              let inString = false;
+              let escaped = false;
+              for (let i = 0; i < s.length; i++) {
+                const ch = s[i];
+                if (escaped) { out += ch; escaped = false; continue; }
+                if (ch === "\\") { out += ch; escaped = true; continue; }
+                if (ch === '"') { inString = !inString; out += ch; continue; }
+                if (inString) {
+                  if (ch === "\n") { out += "\\n"; continue; }
+                  if (ch === "\r") { out += "\\r"; continue; }
+                  if (ch === "\t") { out += "\\t"; continue; }
+                }
+                out += ch;
+              }
+              return out;
+            };
+            result = JSON.parse(sanitizeJson(jsonMatch[0]));
+          } catch {
+            // Aggressive fallback: manually extract the body text from the raw response
+            const bodyMatch = text.match(/"body"\s*:\s*"([\s\S]*?)(?<!\\)"\s*,\s*"hashtags"/);
+            if (bodyMatch) {
+              const formatMatch = text.match(/"format"\s*:\s*"([^"]+)"/);
+              const hashtagsMatch = text.match(/"hashtags"\s*:\s*\[([\s\S]*?)\]/);
+              let hashtags: string[] = [];
+              if (hashtagsMatch) {
+                hashtags = (hashtagsMatch[1].match(/"([^"]+)"/g) || []).map((t: string) => t.replace(/"/g, ""));
+              }
+              let pollDataMatch = text.match(/"pollData"\s*:\s*(\{\s*"question"\s*:\s*"[^"]+"\s*,\s*"options"\s*:\s*\[[^\]]+\]\s*\})/);
+              let pollData = null;
+              if (pollDataMatch) {
+                try { pollData = JSON.parse(pollDataMatch[1]); } catch(e) {}
+              }
+              result = {
+                type: "post",
+                post: {
+                  format: formatMatch?.[1] || "Hook Story",
+                  body: bodyMatch[1].replace(/\\n/g, "\n"),
+                  hashtags,
+                  pollData
+                }
+              };
+            } else {
+              // Final fallback: treat entire response as a chat message
+              result = { type: "chat", reply: text.replace(/\{[\s\S]*\}/g, "").trim() || text };
+            }
+          }
+        } else {
+          result = { type: "chat", reply: text };
+        }
+      }
+
+      // Save to database (Session & Message)
+      if (user._id.toString()) {
+        try {
+          if (user && result) {
+            const aiContent = result?.post?.body || result?.reply || text;
+
+            // Find or create session for legacy flow
+            let session = await ChatSession.findOne({ userId: user._id.toString(), postId: postId || null }).lean();
+
+            if (!session) {
+              session = await ChatSession.create({
+                  userId: user._id.toString(),
+                  title: prompt ? prompt.slice(0, 30) : "Legacy Session",
+                  postId: postId || null,
+                });
+            }
+
+            await Message.create({
+                sessionId: session._id.toString(),
+                role: "USER",
+                content: prompt || "Write a LinkedIn post",
+              });
+
+            await Message.create({
+                sessionId: session._id.toString(),
+                role: "ASSISTANT",
+                content: aiContent || "(generating...)",
+                variants: result?.post ? [{
+                  type: result.post.format,
+                  body: result.post.body,
+                  hashtags: result.post.hashtags,
+                  pollData: result.post.pollData || undefined
+                }] : undefined,
+              });
+          }
+        } catch (dbError) {
+          console.error("Database save failed:", dbError);
+        }
+      }
+
+      if (result) return NextResponse.json(result);
+    }
+
+    return NextResponse.json(
+      { error: "quota_exceeded", message: "All AI providers failed to generate a response." },
+      { status: 429 }
+    );
+
+  } catch (error) {
+    console.error("Generate error:", error);
+    return NextResponse.json({ error: "Failed to generate post" }, { status: 500 });
+  }
+}

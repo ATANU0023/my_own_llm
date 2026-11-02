@@ -1,0 +1,645 @@
+Wikipedia
+The Free Encyclopedia
+English
+7,254,000+ articles
+日本語
+1,523,000+ 記事
+Deutsch
+3.159.000+ Artikel
+Français
+2 785 000+ articles
+Русский
+2 123 000+ статей
+Español
+2.144.000+ artículos
+Italiano
+1.991.000+ voci
+中文
+1,561,000+ 条目 / 條目
+Português
+1.185.000+ artigos
+Polski
+1 711 000+ haseł
+Search Wikipedia
+en
+English
+ 
+ Read Wikipedia in your language 
+Wikipedia is hosted by the Wikimedia Foundation, a non-profit organization that also hosts a range of other projects.
+You can support our work with a donation.
+Download Wikipedia for Android or iOS
+Save your favorite articles to read offline, sync your reading lists across devices and customize your reading experience with the official Wikipedia app.
+
+Google Play Store Apple App Store
+ 
+Commons
+Free media collection
+ 
+Wikivoyage
+Free travel guide
+ 
+Wiktionary
+Free dictionary
+ 
+Wikibooks
+Free textbooks
+ 
+Wikidata
+Free knowledge base
+ 
+Wikiversity
+Free learning resources
+ 
+Wikiquote
+Free quote compendium
+ 
+MediaWiki
+Free & open wiki software
+ 
+Wikisource
+Free content library
+ 
+Wikispecies
+Free species directory
+ 
+Wikifunctions
+Free function library
+ 
+Meta-Wiki
+Community coordination & documentation
+This page is available under the Creative Commons Attribution-ShareAlike License Terms of Use Privacy Policy
+
+
+
+Skip to main content
+
+An official website of the United States government
+
+Here's how you know
+NIH Websites Are Changing
+Get the Latest Updates and FAQs on the transition
+Per Executive Order 14434, federal agencies are now using "Super Intelligence" (SI) in place of "Artificial Intelligence" (AI). You may see both terms across NIH content during this transition.
+ 
+NCBI home page
+Search
+
+Log in
+Primary site navigation
+Search PMC Full-Text Archive
+Search PMC Full-Text Archive
+
+Search in PMC
+Journal List 
+User Guide
+As a library, NLM provides access to scientific literature. Inclusion in an NLM database does not imply endorsement of, or agreement with, the contents by NLM or the National Institutes of Health.
+Learn more: PMC Disclaimer | PMC Copyright Notice
+Tzu-Chi Medical Journal logo
+Tzu Chi Med J. 2020 Aug 14;32(4):339–343. doi: 10.4103/tcmj.tcmj_71_20
+The impact of artificial intelligence on human society and bioethics
+Michael Cheng-Tek Tai 1,*
+Author information
+Article notes
+Copyright and License information
+PMCID: PMC7605294  PMID: 33163378
+Abstract
+Artificial intelligence (AI), known by some as the industrial revolution (IR) 4.0, is going to change not only the way we do things, how we relate to others, but also what we know about ourselves. This article will first examine what AI is, discuss its impact on industrial, social, and economic changes on humankind in the 21st century, and then propose a set of principles for AI bioethics. The IR1.0, the IR of the 18th century, impelled a huge social change without directly complicating human relationships. Modern AI, however, has a tremendous impact on how we do things and also the ways we relate to one another. Facing this challenge, new principles of AI bioethics must be considered and developed to provide guidelines for the AI technology to observe so that the world will be benefited by the progress of this new intelligence.
+
+KEYWORDS: Artificial intelligence, Bioethics, Principles of artificial intelligence bioethics
+
+WHAT IS ARTIFICIAL INTELLIGENCE?
+Artificial intelligence (AI) has many different definitions; some see it as the created technology that allows computers and machines to function intelligently. Some see it as the machine that replaces human labor to work for men a more effective and speedier result. Others see it as “a system” with the ability to correctly interpret external data, to learn from such data, and to use those learnings to achieve specific goals and tasks through flexible adaptation [1].
+
+Despite the different definitions, the common understanding of AI is that it is associated with machines and computers to help humankind solve problems and facilitate working processes. In short, it is an intelligence designed by humans and demonstrated by machines. The term AI is used to describe these functions of human-made tool that emulates the “cognitive” abilities of the natural intelligence of human minds [2].
+
+Along with the rapid development of cybernetic technology in recent years, AI has been seen almost in all our life circles, and some of that may no longer be regarded as AI because it is so common in daily life that we are much used to it such as optical character recognition or the Siri (speech interpretation and recognition interface) of information searching equipment on computer [3].
+
+DIFFERENT TYPES OF ARTIFICIAL INTELLIGENCE
+From the functions and abilities provided by AI, we can distinguish two different types. The first is weak AI, also known as narrow AI that is designed to perform a narrow task, such as facial recognition or Internet Siri search or self-driving car. Many currently existing systems that claim to use “AI” are likely operating as a weak AI focusing on a narrowly defined specific function. Although this weak AI seems to be helpful to human living, there are still some think weak AI could be dangerous because weak AI could cause disruptions in the electric grid or may damage nuclear power plants when malfunctioned.
+
+The new development of the long-term goal of many researchers is to create strong AI or artificial general intelligence (AGI) which is the speculative intelligence of a machine that has the capacity to understand or learn any intelligent task human being can, thus assisting human to unravel the confronted problem. While narrow AI may outperform humans such as playing chess or solving equations, but its effect is still weak. AGI, however, could outperform humans at nearly every cognitive task.
+
+Strong AI is a different perception of AI that it can be programmed to actually be a human mind, to be intelligent in whatever it is commanded to attempt, even to have perception, beliefs and other cognitive capacities that are normally only ascribed to humans [4].
+
+In summary, we can see these different functions of AI [5,6]:
+
+Automation: What makes a system or process to function automatically
+
+Machine learning and vision: The science of getting a computer to act through deep learning to predict and analyze, and to see through a camera, analog-to-digital conversion and digital signal processing
+
+Natural language processing: The processing of human language by a computer program, such as spam detection and converting instantly a language to another to help humans communicate
+
+Robotics: A field of engineering focusing on the design and manufacturing of cyborgs, the so-called machine man. They are used to perform tasks for human's convenience or something too difficult or dangerous for human to perform and can operate without stopping such as in assembly lines
+
+Self-driving car: Use a combination of computer vision, image recognition amid deep learning to build automated control in a vehicle.
+
+DO HUMAN-BEINGS REALLY NEED ARTIFICIAL INTELLIGENCE?
+Is AI really needed in human society? It depends. If human opts for a faster and effective way to complete their work and to work constantly without taking a break, yes, it is. However if humankind is satisfied with a natural way of living without excessive desires to conquer the order of nature, it is not. History tells us that human is always looking for something faster, easier, more effective, and convenient to finish the task they work on; therefore, the pressure for further development motivates humankind to look for a new and better way of doing things. Humankind as the homo-sapiens discovered that tools could facilitate many hardships for daily livings and through tools they invented, human could complete the work better, faster, smarter and more effectively. The invention to create new things becomes the incentive of human progress. We enjoy a much easier and more leisurely life today all because of the contribution of technology. The human society has been using the tools since the beginning of civilization, and human progress depends on it. The human kind living in the 21st century did not have to work as hard as their forefathers in previous times because they have new machines to work for them. It is all good and should be all right for these AI but a warning came in early 20th century as the human-technology kept developing that Aldous Huxley warned in his book Brave New World that human might step into a world in which we are creating a monster or a super human with the development of genetic technology.
+
+Besides, up-to-dated AI is breaking into healthcare industry too by assisting doctors to diagnose, finding the sources of diseases, suggesting various ways of treatment performing surgery and also predicting if the illness is life-threatening [7]. A recent study by surgeons at the Children's National Medical Center in Washington successfully demonstrated surgery with an autonomous robot. The team supervised the robot to perform soft-tissue surgery, stitch together a pig's bowel, and the robot finished the job better than a human surgeon, the team claimed [8,9]. It demonstrates robotically-assisted surgery can overcome the limitations of pre-existing minimally-invasive surgical procedures and to enhance the capacities of surgeons performing open surgery.
+
+Above all, we see the high-profile examples of AI including autonomous vehicles (such as drones and self-driving cars), medical diagnosis, creating art, playing games (such as Chess or Go), search engines (such as Google search), online assistants (such as Siri), image recognition in photographs, spam filtering, predicting flight delays…etc. All these have made human life much easier and convenient that we are so used to them and take them for granted. AI has become indispensable, although it is not absolutely needed without it our world will be in chaos in many ways today.
+
+THE IMPACT OF ARTIFICIAL INTELLIGENCE ON HUMAN SOCIETY
+Negative impact
+Questions have been asked: With the progressive development of AI, human labor will no longer be needed as everything can be done mechanically. Will humans become lazier and eventually degrade to the stage that we return to our primitive form of being? The process of evolution takes eons to develop, so we will not notice the backsliding of humankind. However how about if the AI becomes so powerful that it can program itself to be in charge and disobey the order given by its master, the humankind?
+
+Let us see the negative impact the AI will have on human society [10,11]:
+
+A huge social change that disrupts the way we live in the human community will occur. Humankind has to be industrious to make their living, but with the service of AI, we can just program the machine to do a thing for us without even lifting a tool. Human closeness will be gradually diminishing as AI will replace the need for people to meet face to face for idea exchange. AI will stand in between people as the personal gathering will no longer be needed for communication
+
+Unemployment is the next because many works will be replaced by machinery. Today, many automobile assembly lines have been filled with machineries and robots, forcing traditional workers to lose their jobs. Even in supermarket, the store clerks will not be needed anymore as the digital device can take over human labor
+
+Wealth inequality will be created as the investors of AI will take up the major share of the earnings. The gap between the rich and the poor will be widened. The so-called “M” shape wealth distribution will be more obvious
+
+New issues surface not only in a social sense but also in AI itself as the AI being trained and learned how to operate the given task can eventually take off to the stage that human has no control, thus creating un-anticipated problems and consequences. It refers to AI's capacity after being loaded with all needed algorithm may automatically function on its own course ignoring the command given by the human controller
+
+The human masters who create AI may invent something that is racial bias or egocentrically oriented to harm certain people or things. For instance, the United Nations has voted to limit the spread of nucleus power in fear of its indiscriminative use to destroying humankind or targeting on certain races or region to achieve the goal of domination. AI is possible to target certain race or some programmed objects to accomplish the command of destruction by the programmers, thus creating world disaster.
+
+POSITIVE IMPACT
+There are, however, many positive impacts on humans as well, especially in the field of healthcare. AI gives computers the capacity to learn, reason, and apply logic. Scientists, medical researchers, clinicians, mathematicians, and engineers, when working together, can design an AI that is aimed at medical diagnosis and treatments, thus offering reliable and safe systems of health-care delivery. As health professors and medical researchers endeavor to find new and efficient ways of treating diseases, not only the digital computer can assist in analyzing, robotic systems can also be created to do some delicate medical procedures with precision. Here, we see the contribution of AI to health care [7,11]:
+
+Fast and accurate diagnostics
+IBM's Watson computer has been used to diagnose with the fascinating result. Loading the data to the computer will instantly get AI's diagnosis. AI can also provide various ways of treatment for physicians to consider. The procedure is something like this: To load the digital results of physical examination to the computer that will consider all possibilities and automatically diagnose whether or not the patient suffers from some deficiencies and illness and even suggest various kinds of available treatment.
+
+Socially therapeutic robots
+Pets are recommended to senior citizens to ease their tension and reduce blood pressure, anxiety, loneliness, and increase social interaction. Now cyborgs have been suggested to accompany those lonely old folks, even to help do some house chores. Therapeutic robots and the socially assistive robot technology help improve the quality of life for seniors and physically challenged [12].
+
+Reduce errors related to human fatigue
+Human error at workforce is inevitable and often costly, the greater the level of fatigue, the higher the risk of errors occurring. Al technology, however, does not suffer from fatigue or emotional distraction. It saves errors and can accomplish the duty faster and more accurately.
+
+Artificial intelligence-based surgical contribution
+AI-based surgical procedures have been available for people to choose. Although this AI still needs to be operated by the health professionals, it can complete the work with less damage to the body. The da Vinci surgical system, a robotic technology allowing surgeons to perform minimally invasive procedures, is available in most of the hospitals now. These systems enable a degree of precision and accuracy far greater than the procedures done manually. The less invasive the surgery, the less trauma it will occur and less blood loss, less anxiety of the patients.
+
+Improved radiology
+The first computed tomography scanners were introduced in 1971. The first magnetic resonance imaging (MRI) scan of the human body took place in 1977. By the early 2000s, cardiac MRI, body MRI, and fetal imaging, became routine. The search continues for new algorithms to detect specific diseases as well as to analyze the results of scans [9]. All those are the contribution of the technology of AI.
+
+Virtual presence
+The virtual presence technology can enable a distant diagnosis of the diseases. The patient does not have to leave his/her bed but using a remote presence robot, doctors can check the patients without actually being there. Health professionals can move around and interact almost as effectively as if they were present. This allows specialists to assist patients who are unable to travel.
+
+SOME CAUTIONS TO BE REMINDED
+Despite all the positive promises that AI provides, human experts, however, are still essential and necessary to design, program, and operate the AI from any unpredictable error from occurring. Beth Kindig, a San Francisco-based technology analyst with more than a decade of experience in analyzing private and public technology companies, published a free newsletter indicating that although AI has a potential promise for better medical diagnosis, human experts are still needed to avoid the misclassification of unknown diseases because AI is not omnipotent to solve all problems for human kinds. There are times when AI meets an impasse, and to carry on its mission, it may just proceed indiscriminately, ending in creating more problems. Thus vigilant watch of AI's function cannot be neglected. This reminder is known as physician-in-the-loop [13].
+
+The question of an ethical AI consequently was brought up by Elizabeth Gibney in her article published in Nature to caution any bias and possible societal harm [14]. The Neural Information processing Systems (NeurIPS) conference in Vancouver Canada in 2020 brought up the ethical controversies of the application of AI technology, such as in predictive policing or facial recognition, that due to bias algorithms can result in hurting the vulnerable population [14]. For instance, the NeurIPS can be programmed to target certain race or decree as the probable suspect of crime or trouble makers.
+
+THE CHALLENGE OF ARTIFICIAL INTELLIGENCE TO BIOETHICS
+Artificial intelligence ethics must be developed
+Bioethics is a discipline that focuses on the relationship among living beings. Bioethics accentuates the good and the right in biospheres and can be categorized into at least three areas, the bioethics in health settings that is the relationship between physicians and patients, the bioethics in social settings that is the relationship among humankind and the bioethics in environmental settings that is the relationship between man and nature including animal ethics, land ethics, ecological ethics…etc. All these are concerned about relationships within and among natural existences.
+
+As AI arises, human has a new challenge in terms of establishing a relationship toward something that is not natural in its own right. Bioethics normally discusses the relationship within natural existences, either humankind or his environment, that are parts of natural phenomena. But now men have to deal with something that is human-made, artificial and unnatural, namely AI. Human has created many things yet never has human had to think of how to ethically relate to his own creation. AI by itself is without feeling or personality. AI engineers have realized the importance of giving the AI ability to discern so that it will avoid any deviated activities causing unintended harm. From this perspective, we understand that AI can have a negative impact on humans and society; thus, a bioethics of AI becomes important to make sure that AI will not take off on its own by deviating from its originally designated purpose.
+
+Stephen Hawking warned early in 2014 that the development of full AI could spell the end of the human race. He said that once humans develop AI, it may take off on its own and redesign itself at an ever-increasing rate [15]. Humans, who are limited by slow biological evolution, could not compete and would be superseded. In his book Superintelligence, Nick Bostrom gives an argument that AI will pose a threat to humankind. He argues that sufficiently intelligent AI can exhibit convergent behavior such as acquiring resources or protecting itself from being shut down, and it might harm humanity [16].
+
+The question is–do we have to think of bioethics for the human's own created product that bears no bio-vitality? Can a machine have a mind, consciousness, and mental state in exactly the same sense that human beings do? Can a machine be sentient and thus deserve certain rights? Can a machine intentionally cause harm? Regulations must be contemplated as a bioethical mandate for AI production.
+
+Studies have shown that AI can reflect the very prejudices humans have tried to overcome. As AI becomes “truly ubiquitous,” it has a tremendous potential to positively impact all manner of life, from industry to employment to health care and even security. Addressing the risks associated with the technology, Janosch Delcker, Politico Europe's AI correspondent, said: “I don't think AI will ever be free of bias, at least not as long as we stick to machine learning as we know it today,”…. “What's crucially important, I believe, is to recognize that those biases exist and that policymakers try to mitigate them” [17]. The High-Level Expert Group on AI of the European Union presented Ethics Guidelines for Trustworthy AI in 2019 that suggested AI systems must be accountable, explainable, and unbiased. Three emphases are given:
+
+Lawful-respecting all applicable laws and regulations
+
+Ethical-respecting ethical principles and values
+
+Robust-being adaptive, reliable, fair, and trustworthy from a technical perspective while taking into account its social environment [18].
+
+Seven requirements are recommended [18]:
+
+AI should not trample on human autonomy. People should not be manipulated or coerced by AI systems, and humans should be able to intervene or oversee every decision that the software makes
+
+AI should be secure and accurate. It should not be easily compromised by external attacks, and it should be reasonably reliable
+
+Personal data collected by AI systems should be secure and private. It should not be accessible to just anyone, and it should not be easily stolen
+
+Data and algorithms used to create an AI system should be accessible, and the decisions made by the software should be “understood and traced by human beings.” In other words, operators should be able to explain the decisions their AI systems make
+
+Services provided by AI should be available to all, regardless of age, gender, race, or other characteristics. Similarly, systems should not be biased along these lines
+
+AI systems should be sustainable (i.e., they should be ecologically responsible) and “enhance positive social change”
+
+AI systems should be auditable and covered by existing protections for corporate whistleblowers. The negative impacts of systems should be acknowledged and reported in advance.
+
+From these guidelines, we can suggest that future AI must be equipped with human sensibility or “AI humanities.” To accomplish this, AI researchers, manufacturers, and all industries must bear in mind that technology is to serve not to manipulate humans and his society. Bostrom and Judkowsky listed responsibility, transparency, auditability, incorruptibility, and predictability [19] as criteria for the computerized society to think about.
+
+SUGGESTED PRINCIPLES FOR ARTIFICIAL INTELLIGENCE BIOETHICS
+Nathan Strout, a reporter at Space and Intelligence System at Easter University, USA, reported just recently that the intelligence community is developing its own AI ethics. The Pentagon made announced in February 2020 that it is in the process of adopting principles for using AI as the guidelines for the department to follow while developing new AI tools and AI-enabled technologies. Ben Huebner, chief of the Office of Director of National Intelligence's Civil Liberties, Privacy, and Transparency Office, said that “We're going to need to ensure that we have transparency and accountability in these structures as we use them. They have to be secure and resilient” [20]. Two themes have been suggested for the AI community to think more about: Explainability and interpretability. Explainability is the concept of understanding how the analytic works, while interpretability is being able to understand a particular result produced by an analytic [20].
+
+All the principles suggested by scholars for AI bioethics are well-brought-up. I gather from different bioethical principles in all the related fields of bioethics to suggest four principles here for consideration to guide the future development of the AI technology. We however must bear in mind that the main attention should still be placed on human because AI after all has been designed and manufactured by human. AI proceeds to its work according to its algorithm. AI itself cannot empathize nor have the ability to discern good from evil and may commit mistakes in processes. All the ethical quality of AI depends on the human designers; therefore, it is an AI bioethics and at the same time, a trans-bioethics that abridge human and material worlds. Here are the principles:
+
+Beneficence: Beneficence means doing good, and here it refers to the purpose and functions of AI should benefit the whole human life, society and universe. Any AI that will perform any destructive work on bio-universe, including all life forms, must be avoided and forbidden. The AI scientists must understand that reason of developing this technology has no other purpose but to benefit human society as a whole not for any individual personal gain. It should be altruistic, not egocentric in nature
+
+Value-upholding: This refers to AI's congruence to social values, in other words, universal values that govern the order of the natural world must be observed. AI cannot elevate to the height above social and moral norms and must be bias-free. The scientific and technological developments must be for the enhancement of human well-being that is the chief value AI must hold dearly as it progresses further
+
+Lucidity: AI must be transparent without hiding any secret agenda. It has to be easily comprehensible, detectable, incorruptible, and perceivable. AI technology should be made available for public auditing, testing and review, and subject to accountability standards … In high-stakes settings like diagnosing cancer from radiologic images, an algorithm that can't “explain its work” may pose an unacceptable risk. Thus, explainability and interpretability are absolutely required
+
+Accountability: AI designers and developers must bear in mind they carry a heavy responsibility on their shoulders of the outcome and impact of AI on whole human society and the universe. They must be accountable for whatever they manufacture and create.
+
+CONCLUSION
+AI is here to stay in our world and we must try to enforce the AI bioethics of beneficence, value upholding, lucidity and accountability. Since AI is without a soul as it is, its bioethics must be transcendental to bridge the shortcoming of AI's inability to empathize. AI is a reality of the world. We must take note of what Joseph Weizenbaum, a pioneer of AI, said that we must not let computers make important decisions for us because AI as a machine will never possess human qualities such as compassion and wisdom to morally discern and judge [10]. Bioethics is not a matter of calculation but a process of conscientization. Although AI designers can up-load all information, data, and programmed to AI to function as a human being, it is still a machine and a tool. AI will always remain as AI without having authentic human feelings and the capacity to commiserate. Therefore, AI technology must be progressed with extreme caution. As Von der Leyen said in White Paper on AI – A European approach to excellence and trust: “AI must serve people, and therefore, AI must always comply with people's rights…. High-risk AI. That potentially interferes with people's rights has to be tested and certified before it reaches our single market” [21].
+
+Financial support and sponsorship
+Nil.
+
+Conflicts of interest
+There are no conflicts of interest.
+
+REFERENCES
+1.Kaplan A, Haenlein M. Siri, Siri, in my hand: Who's the fairest in the land? On the interpretations, illustrations, and implications of artificial intelligence. Business Horizons. 2019;62:15–25. [Google Scholar]
+2.Russell SJ, Norvig P. Artificial Intelligence: A Modern Approach. Upper Saddle River, New Jersey: Prentice Hall; 2009. [Google Scholar]
+3.Roger C. Schank.Where's the AI. AI Magazine. 1991;12:38. [Google Scholar]
+4.Jerry K. Artificial Intelligence – what everyone needs to know. New York: Oxford University Press; 2016. [Google Scholar]
+5.Nilsson JN. Principles of artificial intelligence. Palo California: Morgan Kaufmann Publishers; 1980. [Google Scholar]
+6.Nils N. Artificial Intelligence: A New Synthesis. Morgan Kaufmann; 1998. [Google Scholar]
+7.Dina B. “Microsoft develops AI to help cancer doctors find the right treatment” in Bloomberg News. 2016 [Google Scholar]
+8.Meera S. Are autonomous Robots your next surgeons CNN Cable News Network. 2016 [Google Scholar]
+9.Jacob R. Thinking machines: The search for artificial intelligence. Distillations. 2016;2:14–23. [Google Scholar]
+10.Joseph W. Computer Power and Human Reason from Judgement to Calculation. San Francisco: W H Freeman Publishing; 1976. [Google Scholar]
+11.Rory CJ. Stephen Hawking warns artificial intelligence could end mankind BBC News Wikipedia, the Free Encyclopedia on Artificial Intelligence. 2014. [Last accessed on 2019 Jun 23]. Available from: https://enwikipediaorg/wiki/Artifical_Intelligence .
+12.Scoping study on the emerging use of Artificial Intelligence (AI) and robotics in social care published by Skills for Care. [Last accessed on 2019 Aug 15]. Available from: wwwskillsforcareorguk .
+13.Beth Kindig, a Technology Analyst published in Beth. Tchnology. 2020. [Last accessed on 30 Mar 2020]. Available from: https://wwwforbescom/sites/bethkindig/2020/01/31/5-soon-t0-be-trends-in-artificial-intelligence-and-deep-learning/
+14.Nature News, 24 January 2020. The battle for ethical AI at the world's biggest machine-learning conference by Elizabeth Gibney. [Last accessed on 2020 Apr 11]. Available from: https://www.nature.com/articles/d41586-020-00160-y . [DOI] [PubMed]
+15.Prof Stephen Hawking, one of Britain's pre-eminent scientists, has said that efforts to create thinking machines pose a threat to our very existence. Interview on BBC on Dec 2, 2014. Noted by Rory CellanJones. [Google Scholar]
+16.Bostrom Nick: Superintelligence: paths, dangers, strategies. Keith Mansfield: Oxford University Press; 2014. [Google Scholar]
+17.Delcker J. Politico Europe's artificial intelligence correspondent told DW News in DW News on Black Box of Artificial Intelligence. 2018. [Last accessed on 2019 Nov 18]. Available from https://mdwcom/en/can-ai-be-free-of-bias/a-43910804 .
+18.European Commission on Ethical Guidelines for Trustworthy AI. The High-Level Expert Group on AI presented this guideline which stated three requirements: lawful, ethical and robust [Google Scholar]
+19.Nick B, Yudkowsky E. The Ethics of Artificial Intelligence. In: Keith Frankish, William Ramsey., editors. Cambridge Handbook of Artificial Intelligence. New York: Cambridge University Press; 2014. [Google Scholar]
+20.Quoted from Nathan Strout: The Intelligence Community is developing its own AI ethics on Artificial Intelligence Newsletter. 2020. [Last accessed on 2020 May 21]. Available from: https://wwwc4isrnetcom/artificial-intelligence/2020/03/06/the-intelligence-community-is-developing-its-own-ai-ethics/
+21.Von der Leyen. the President of European Commission unveiled EU's plans to regulate AI on Feb 19. 2020. [Last accessed on 2020 May 08]. at www.dw.com/en/european-union-unveils-plan-to-regulate-ai/a-52429426 .
+Articles from Tzu-Chi Medical Journal are provided here courtesy of Wolters Kluwer -- Medknow Publications
+
+ACTIONS
+View on publisher site icon
+View on publisher site
+Download PDF icon
+PDF (548.9 KB)
+Cite icon
+Cite
+Collections icon
+Collections
+Permalink icon
+Permalink
+RESOURCES
+Similar articles
+Cited by other articles
+Links to NCBI Databases
+On this page
+Abstract
+WHAT IS ARTIFICIAL INTELLIGENCE?
+DIFFERENT TYPES OF ARTIFICIAL INTELLIGENCE
+DO HUMAN-BEINGS REALLY NEED ARTIFICIAL INTELLIGENCE?
+THE IMPACT OF ARTIFICIAL INTELLIGENCE ON HUMAN SOCIETY
+POSITIVE IMPACT
+SOME CAUTIONS TO BE REMINDED
+THE CHALLENGE OF ARTIFICIAL INTELLIGENCE TO BIOETHICS
+SUGGESTED PRINCIPLES FOR ARTIFICIAL INTELLIGENCE BIOETHICS
+CONCLUSION
+REFERENCES
+
+Follow NCBI
+NCBI on X (formerly known as Twitter)
+NCBI on Facebook
+NCBI on LinkedIn
+NCBI on GitHub
+NCBI RSS feed
+Connect with NLM
+
+NLM on X (formerly known as Twitter)
+NLM on Facebook
+NLM on YouTube
+National Library of Medicine
+8600 Rockville Pike
+Bethesda, MD 20894
+
+Web Policies
+FOIA
+HHS Vulnerability Disclosure
+Help
+Accessibility
+Careers
+NLM
+NIH
+HHS
+USA.gov
+Back to Topback to top icon
+
+
+Wiley Science and Engineering Content Hub
+Log in
+Register
+Pioneering the Boundaries of Scientific Discovery with Wiley's eBooks
+Topics
+AI Infrastructure
+ 
+Analytical Science
+ 
+Biotechnology
+ 
+Electronics
+ 
+Engineering
+ 
+Environmental Analysis
+ 
+Life Science
+ 
+Metrology
+ 
+PCIe Validation and Testing
+ 
+Physical Science
+ 
+Physics
+ 
+Quantum Computing
+About
+Contact
+Digital Events Hub
+Search
+
+Email Address *
+Password *
+Remember me
+Remember me
+Log In
+
+Login information
+Email *
+Password *
+Personal profile
+Name *
+First
+Last
+Industry *
+Job Title *
+Company/Organization *
+Country/Location *
+
+Please select...
+State/Province *
+
+Please select…
+Consent *
+I have read and agree to Wiley's Terms of Use and Privacy Policy. I understand that my data may be used to receive news and updates from Wiley and I consent to receive marketing messaging from Wiley. I understand that I can unsubscribe at any time.
+
+Register
+White Paper
+Learning to Play Like a Pro: Adaptive Motion Planning and Tracking for Humanoid Robots
+Access
+First register your details to create a user profile for the hub, then login to access all content within the hub.
+
+Already registered? Click here to log in to the hub.
+Login information
+Email *
+Password *
+Personal profile
+Name *
+First
+Last
+Industry *
+Job Title *
+Company/Organization *
+Country/Location *
+
+Please select...
+State/Province *
+
+Please select…
+Consent *
+I have read and agree to Wiley's Terms of Use and Privacy Policy. I understand that my data may be used to receive news and updates from Wiley and I consent to receive marketing messaging from Wiley. I understand that I can unsubscribe at any time.
+
+Register
+
+
+Download this complimentary White Paper today!
+This White Paper provides roboticists and control engineers with a comprehensive overview of how motion planning and motion tracking can be decoupled to preserve professional athletic style in humanoid robots, and why adaptive, speed-aware control is essential for closing the gap between simulation and real-world deployment.
+ 
+
+What you will learn about: 
+
+Why combining a professional athlete’s motion style with reliable task performance remains an open challenge in humanoid ball-sports robotics, and how separating a high-level planner from a low-level tracker addresses this trade-off.
+How motion data extracted from broadcast video and motion-capture recordings can be reconstructed, retargeted, and physically corrected into reference motions a humanoid robot can safely track.
+Why the sim-to-real transition introduces compounding tracking errors, and how training a tracker on randomized execution speeds, paired with a learned motion-speed adapter in the planner, improves robustness on physical hardware.
+How this adaptive framework was validated across two humanoid platforms, including full-size, in-the-wild serving performed without any motion-capture system.
+ 
+
+Click ‘LOOK INSIDE’ to Download Now.
+LOOK INSIDEPDF Cover
+IEEE Spectrum and Wiley are proud to bring you this White Paper, sponsored by Noitom Robotics
+More Information
+Humanoid robots have begun to show real capability in ball sports, but preserving a professional athlete’s motion style while maintaining reliable task performance is still an unresolved problem. This guide examines an adaptive motion planning and tracking framework that learns tennis serving and rally styles directly from broadcast video and motion-capture data. A hierarchical design separates a planner, which generates stylistic kinematic motion, from a tracker, which executes that motion with minimal interference. Because tracking performance inevitably degrades when a policy trained in simulation moves to physical hardware, the framework trains its tracker on randomized execution speeds and conditions its planner on a learned motion-speed representation, reducing the compounding errors introduced by autoregressive planning and noisy perception. The paper documents real-world validation on a research humanoid platform and transfer to a full-size humanoid robot, including serving in an uncontrolled environment without motion capture, and closes with practical, transferable lessons for engineers building future humanoid ball-sports systems.
+
+
+
+Sponsored by
+
+
+Noitom Robotics builds ModalityNet, the human-centric data substrate that makes the physical world learnable for embodied AI.
+
+Partnered with
+
+
+IEEE Spectrum Magazine, the flagship publication of the IEEE, explores the development, applications and implications of new technologies. It anticipates trends in engineering, science, and technology, and provides a forum for understanding, discussion and leadership in these areas.
+
+More Content from this Sponsor
+White Paper
+HiPHI: A Large-Scale Benchmark for High-Precision Human Motion and Object Interaction
+More Content from this Partner
+White Paper
+Fast RF Device Testing with Analog Sources: A Practical Guide to Amplifier and Receiver Characterization
+White Paper
+Edge AI for Smart Cities: From Real-Time Insights to Cognitive Urban Systems
+White Paper
+HiPHI: A Large-Scale Benchmark for High-Precision Human Motion and Object Interaction
+Content Type
+White Paper
+Sponsor
+Noitom Robotics
+Partner
+IEEE Spectrum
+Topic(s)
+Electrical Engineering
+Engineering
+Equipment & Lab Automation
+Industrial Engineering
+Robotics
+Software Engineering
+Tagged With
+adaptive motion tracking
+ball-sports robotics
+hierarchical motion architecture
+Humanoid motion control
+humanoid robots
+imitation learning from video
+learning from video
+motion planning
+motion retargeting
+motion style
+motion tracking
+real-world robot deployment
+reinforcement learning
+robot perception
+robotic ball sports
+sim-to-real transfer
+whole-body control
+Contact Us
+Do you have a query about the content on the hub or are having issues with access? Contact us here: contenthub@wiley.com
+
+Share
+TOPICS
+AI Infrastructure
+Analytical Science
+Biotechnology
+Electronics
+Engineering
+Environmental Analysis
+Life Science
+Metrology
+PCIe Validation and Testing
+Physical Science
+Physics
+Quantum Computing
+© Copyright 2026 John Wiley & Sons, Inc., or related companies. All rights reserved.
+AboutPrivacyTerms of UseContact UsCookie Preferences
+
+
+IEEE.orgIEEE XploreIEEE StandardsIEEE Job SiteMore Sites
+Sign InJoin IEEE
+FOR THE TECHNOLOGY INSIDER
+Search: 
+Type to search
+
+Explore by topic
+
+Energy
+Feature
+If We Want Bigger Wind Turbines, We’re Gonna Need Bigger Airplanes
+Radia’s building an aircraft longer than a football field
+Andrew Moseman10 Sep 20259 min read
+A rendering of the WindRunner aircraft in flight over mountainous desert
+Aeronautical engineering at a preposterous scale: At 108 meters in length, WindRunner will look like an oil tanker that’s sprouted wings. Radia
+The world’s largest airplane, when it’s built, will stretch more than a football field from tip to tail. Sixty percent longer than the biggest existing aircraft, with 12 times as much cargo space as a 747, the behemoth will look like an oil tanker that’s sprouted wings—aeronautical engineering at a preposterous scale.
+
+
+Called WindRunner, and expected by 2030, it’ll haul just one thing: massive wind-turbine blades. In most parts of the world, onshore wind-turbine blades can be built to a length of 70 meters, max. This size constraint comes not from the limits of blade engineering or physics; it’s transportation. Any larger and the blades couldn’t be moved over land, since they wouldn’t fit through tunnels or overpasses, or be able to accommodate some of the sharper curves of roads and rails.
+
+This article is part of The Scale Issue.
+
+So the WindRunner’s developer, Radia of Boulder, Colo., has staked its business model on the idea that the only way to get extralarge blades to wind farms is to fly them there. “The companies in the industry…know how to make turbines that are the size of the Eiffel Tower with blades that are longer than a football field,” says Mark Lundstrom, Radia’s founder and CEO. “But they’re just frustrated that they can’t deploy those machines [on land].”
+
+Radia’s plane will be able to hold two 95-meter blades or one 105-meter blade, and land on makeshift dirt runways adjacent to wind farms. This may sound audacious—an act of hubris undertaken for its own sake. But Radia’s supporters argue that WindRunner is simply the right tool for the job—the only way to make onshore wind turbines bigger.
+
+Bigger turbines, after all, can generate more energy at a lower cost per megawatt. But the question is: Will supersizing airplanes be worth the trouble?
+
+Wind Turbine Blade Transportation Challenges
+Lundstrom, an aerospace engineer, founded Radia nine years ago after coming across a plea for help from wind-turbine manufacturers. In their plea, posted as a press release, the manufacturers said they could build bigger onshore blades if there were simply a way to move them, Lundstrom recalls.
+
+In the United States, for example, the height of interstate highway overpasses—typically 4.9 meters (16 feet)—won’t allow for bigger turbine blades to pass. The overpass limitation is true for Europe too. There’s more flexibility in the developing world, where there are fewer tunnels and overpasses generally, Lundstrom says. But many of the roads aren’t paved or hardened, which makes it much tougher to move 50-tonne objects around.
+
+Some regions in China don’t have the same road constraints, allowing extralarge onshore wind turbines to be built there. Last year, Chinese multinational Sany Renewable Energy announced that it had installed a 15-megawatt model in Tongyu, Jilin province, in northeast China, with blades that are 131 meters long. The blades were manufactured in an industrial park in Inner Mongolia, an 1,800-kilometer trek from where they were ultimately installed.
+
+The WindRunner
+Diagram of a plane designed to transport large turbine blades, showcasing its unique features from a side view.WindRunner required unique design specifications to accommodate the ultra-long length of the wind turbine blades it will carry. Optics Lab
+Offshore wind farm developers suffer from the logistical and practical challenges of operating in open ocean, but finding vessels big enough to transport the blades isn’t one of those. The biggest offshore blades measure nearly 150 meters, and they’re usually transported via cargo ship. Manufacturers typically locate their facilities on the coast.
+
+Onshore, the movement of blades has met the hard limits of infrastructure. Shipping them in multiple pieces and reassembling them on-site won’t work because the joints would create weak spots. Junctions would also add too much weight compared with that of blades made from single pieces of polymer, says Doug Arent, executive director at the National Renewable Energy Laboratory Foundation and emeritus NREL researcher.
+
+“It comes down to the stress engineering of the components,” Arent says. Blades could one day be 3D-printed on-site, which could negate the need for an airplane, but that research is still in early stages, he says. (Lundstrom says 3D-printed blades will never happen, since it would require a large, sophisticated manufacturing facility to be built at every wind farm.)
+
+If moving blades in pieces is folly, then the way forward is to fly. But even the largest existing cargo planes—the C-5 and C-17 flown by the U.S. Air Force and the Russo-Ukrainian Antonov AN-124 Ruslan—can’t accommodate large turbine blades. “There really is no big cargo aircraft in production, or planned, except for ours,” Lundstrom says.
+
+How to Make the World’s Largest Aircraft Fly
+What you can experience of Radia’s WindRunner today fits inside a conference room in the company’s Boulder headquarters. Here, a kind of gazebo made of two-by-fours houses a flight simulator, where I’m trying to virtually fly, and land, the behemoth.
+
+There’s a couple of pilot chairs, a joystick, a throttle, a video screen with a head-up display, and a few buttons to operate the simulated landing gear and wing flaps. The grid of flight instruments that will occupy the cockpit space above the pilot’s head are not finished yet. Instead, laminated pictures of the eventual controls are Velcroed in place.
+
+It takes surprisingly few levers and controls to fly the WindRunner. “Physics is physics,” says my copilot Etan Karni, principal engineer and head of Radia’s advanced systems groups. As Karni controls the WindRunner’s airspeed, I pull up on the joystick and guide it off the runway of a virtual Denver International Airport. A few minutes later I make a planned U-turn around a nearby lake. The maneuver is wobbly; I remind myself to move the joystick gently even though this is such a big bird.
+
+The WindRunner
+Aerial diagram of WindRunner airplane design with annotated features on a field background.When it’s built, WindRunner will stretch longer than a football field.Optics Lab
+
+
+With Karni’s aid in controlling the landing gear and flaps, we set down back in Denver. I not only keep the WindRunner in one enormous piece but also bring it to a stop at the very front of the runway, just before the visible streaks of burned rubber from other airliners.
+
+In the real world, this remarkable feat of deceleration will enable the WindRunner to stop within 10 lengths of the aircraft—about 1,080 meters. And the aircraft won’t need the perfected runways of contemporary airports. It’s designed, by necessity, to land on and take off from rugged dirt tracks—like access roads on the perimeter of a wind farm, but wider.
+
+These capabilities are enabled by the plane’s relatively light weight, its wing and body shape, and its big tires. Optimized for cargo volume rather than mass—because turbine blades are huge but not dense—WindRunner is, effectively, one giant cargo hold with the bare minimum of amenities required to make it fly. “Landing on dirt basically comes down to how many pounds per wheel you have,” Lundstrom told me.
+
+WindRunner’s four jet engines will aid with short takeoffs. “When the aircraft is empty,” Lundstrom says, “the engines are so powerful that the vehicle has a thrust-to-weight ratio similar to early fighter jets.” (Radia chose an engine already in use by modern airlines, but hasn’t disclosed which one.)
+
+To allow the plane to quickly turn skyward without scraping its underside, its back end will sweep away from the ground at a sharp angle. A single tail tall enough to stabilize the WindRunner would exceed airports’ height limit of 24 meters, so Radia designed it with two risers in the shape of the letter H.
+
+For landings, the aircraft’s broad and stubby wings use their nearly 1,000-square-meter surface to catch air and decelerate quickly. Twenty big tires borrowed from the classic design of the U.S. Air Force’s C-130 Hercules will help WindRunner slow down after it touches the ground.
+
+The plane’s mouth flips up to reveal its cavernous interior, a feature borrowed from the Antonov An-124. The cockpit, itself about as big as an entire Gulfstream private jet, looks like a pimple bulging from the WindRunner’s staggering frame. It sticks out from the fuselage to avoid interfering with cargo space and is the only part of the plane designed for human habitation. During flight, the hold is only pressurized to about the level of the peak of Mt. Everest, to save energy.
+
+Why Wind Turbines Got Bigger
+During my visit to Radia, a virtual-reality headset lets me behold the colossus from underneath its wing and inside its cargo bay. It feels like standing next to a warehouse that can fly. Seeing the virtual superplane towering above, and grasping the plane’s monumental scale makes me wonder if this adventure in engineering is necessary, that surely there’s another way.
+
+The largest helicopters built in the Western Hemisphere can carry up to 15 tonnes, but megablades can weigh four to five times that, Lundstrom notes. Blimps and airships can carry the weight, but they bring a laundry list of complications. They’re too slow, need an expensive hangar to shield them from bad weather, require helium—which is currently scarce—and struggle to land when it’s windy. “And by the way, wind farms tend to be windy,” he says.
+
+And, since the world’s biggest cargo planes can’t be stretched to meet the length of a 100-meter blade, nor can they land on short, rugged runways, a new design is needed. Still, the fundamental question remains: Is increasing the size of onshore wind turbines by 50 percent worth the trouble?
+
+Michael Howland, a wind-optimization expert at MIT, says there’s a huge value proposition in it. A turbine’s power-generation capacity increases by the cube of the wind speed blowing through it and the square of the diameter of the circle created by the spinning blades, he says. In other words, bigger turbines, while more expensive per individual unit, more than make up for it in generating capacity. That’s why the size of turbines has grown steadily larger over the years.
+
+“You’re able to have half as many,” Lundstrom adds. “So even though the cost of each turbine has gone up, the cost per gigawatt goes way down.” He estimates that GigaWind turbines would decrease the cost of energy by 20 to 35 percent while increasing output by 10 to 20 percent, potentially doubling wind’s profitability even with the cost of all those flights included.
+
+Having fewer total turbines means a wind farm could space them farther apart, avoiding airflow interference. The turbines would be nearly twice as tall, so they’ll reach a higher, gustier part of the atmosphere. And big turbines don’t need to spin as quickly, so they would make economic sense in places with average wind speeds around 5 meters per second compared with the roughly 7 m/s needed to sustain smaller units. “The result…is more than a doubling of the acres in the world where wind is viable,” Lundstrom says.
+
+A rendering of the WindRunner aircraft on a dirt track in the desert next to a wind farm Upon the WindRunner’s landing at a wind farm, rail equipment will roll turbine blades off the plane. Radia
+To kick-start this market, and to support the first WindRunners, Radia is developing a business arm that partners with wind-turbine manufacturers to develop new wind farms both domestically and internationally. WindRunners would deliver blades to those farms and those developed by other companies.
+
+The scope of Radia’s plan, and the ambition behind it, has impressed many observers, including Howland. “I was both surprised but also very impressed by the innovative spirit of the idea,” he says. “It’s great to be ambitious in terms of solving the grand challenges.” But onshore “gigawind” is full of unknowns, he notes. Less is understood about the flow physics and engineering of record-breaking turbine sizes. Plus, huge blades could create wakes so large that the turbines behind them would be noticeably affected by variations in air temperature and even the Coriolis effect caused by Earth’s rotation, and might require innovation in fundamental science, he says.
+
+Then there’s the question of the big plane’s carbon footprint. To move enough blades for a whole wind-farm operation, a WindRunner might fly back and forth from factory to farm every day for months, carrying one or two blades at a time. This may create more carbon emissions compared with trucking them. But Radia argues that the increased amount of clean energy created by advanced wind farms would be far more than enough to offset the CO2 from the jet engines. Besides, the biggest component of a wind farm’s carbon footprint is the concrete and steel. With longer blades allowing for fewer turbines to create the same amount of energy, carbon contributions should decrease, Lundstrom argues.
+
+As Radia continues its quest, a dark cloud hangs over the endeavor. U.S. President Donald Trump and his administration have made multiple attempts to grind the American wind-energy industry to a halt by pausing approvals, permits, and government loans. But Lundstrom pushes back against the notion that the prevailing winds out of Washington will clip Radia’s wings. There’s simply too much money to be made, he says.
+
+“My belief is that [it’ll] sort itself out….We’ll be delivering [planes] at the end of this administration,” Lundstrom says. Increasing the scale at which societies can produce wind power is crucial for a future without fossil fuels. And that scale, he says, can’t be reached without a new airplane to make it possible.
+
+This article was updated on 17 September 2025.
+
+This article appears in the October 2025 print issue as “An Airplane Longer Than a Football Field.”
+
+From Your Site Articles
+Maine’s Floating Offshore Wind Ambitions in Jeopardy ›
+Wind Turbines Just Keep Getting Bigger, But There’s a Limit ›
+Wooden Wind Turbine Towers Reach New Heights ›
+IEEE Spectrum's Top Energy Stories of 2025 - IEEE Spectrum ›
+How William Heronemus Kickstarted Wind Energy - IEEE Spectrum ›
+Related Articles Around the Web
+How Do Wind Turbines Work? | Department of Energy ›
+aircraftscale issuewind energywind powerwind turbines
+Andrew Moseman
+is the online communications editor at Caltech and a freelance contributor to IEEE Spectrum. See full bio →
+
+Publish
+Sort by
+Popular
+W George Mckee
+W George Mckee13 Sep, 2025
+IEEE Spectrum's editors should remember that it was just last May that they published an article based on exclusive access to the LTA Pathfinder 1 dirigible, and included a reference so that I didn't have to look it up myself. ( https://spectrum.ieee.org/lta-research-airship-pathfinder-1 )
+
+Pathfinder 1 is just a reduced scale prototype, but is already 16 meters larger than the Windrunner design. And the LTA airship is already flying. Given the "glacially incremental" test programs that the FAA approves for blank sheet designs, this is a big head start.
+
+
+Joshua Stern
+Joshua Stern2 Oct, 2025
+You can make the turbine as big as you like, but you can't make the wind blow, and you can't make those blades last long enough to earn their keep.
+
+Tom Craver
+Tom Craver20 Sep, 2025
+Worth mentioning that an alternative being examined is modular component blades, put together on site. Not without difficulties, but if it can be done, it could be extended beyond the length this jet could handle.
+
+Group of five men standing outside an office with a placard that reads “representative Greg Casar, Texas, 446”
+AI
+Article
+Why Engineers Should Brave Capitol Hill
+8 hours ago5 min read
+Light blue Volvo FH electric semi‑truck cab shown from front‑side view.
+AI
+Sponsored Article
+Simulation App Speeds Up Electric Truck Battery Design
+16 Oct 20265 min read
+An electric maritime craft flies several meters above the dark blue water of a bay, with buildings visible on a distant shoreline.
+Transportation
+News
+Electric Seagliders Promise Faster Coastal Travel by 2028
+10 hours ago5 min read
+
+
